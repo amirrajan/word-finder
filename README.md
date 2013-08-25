@@ -1,4 +1,4 @@
-##Word Finder
+##Word Finder (MIT License)
 
 I took every english word (over 200k words) and built a little NodeJS app that will help you find words that contain specific characters.
 
