@@ -63,7 +63,7 @@ Runn the app:
 
     node server.js
 
-Then navigate to `http://localhost:3000` open up two _different_ browsers (*not* IE) and play!
+Then navigate to `http://localhost:3000`
 
 ##Signing up, and deploying to Nodejitsu
 
