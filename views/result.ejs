@@ -1,0 +1,17 @@
+<% include header %>
+
+<form method="post" action="search">
+  <div>enter a word, use _ and ? as needed</div>
+  <input type="text" name="pattern" />
+  <br />
+  <input type="submit" value="submit" />
+</form>
+
+<hr/>
+
+<% for(var i = 0; i < words.length; i++) { %>
+  <%= words[i] %><br/>
+<% } %>
+
+
+<% include footer %>
