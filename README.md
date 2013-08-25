@@ -59,7 +59,7 @@ Install all the dependencies:
 
     npm install (you may need to prefix this with sudo if you're on Mac)
 
-Runn the app:
+Run the app:
 
     node server.js
 
