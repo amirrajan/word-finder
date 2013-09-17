@@ -18,12 +18,12 @@ app.use(express.session({secret: 'sooo secret'}));
 app.use(app.router);
 
 app.get('/', function (req, res) {
-  res.render('index');
+  res.render('index', { pattern: null });
 });
 
 app.post('/search', function (req, res) {
   var result = words.search(req.body.pattern);
-  res.render('result', { words: result });
+  res.render('result', { words: result, pattern: req.body.pattern });
 });
 
 server.listen(process.env.PORT || config.port);
