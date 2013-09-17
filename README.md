@@ -1,4 +1,4 @@
-##Word Finder
+##Word Finder (MIT License)
 
 I took every english word (over 200k words) and built a little NodeJS app that will help you find words that contain specific characters.
 
@@ -59,11 +59,11 @@ Install all the dependencies:
 
     npm install (you may need to prefix this with sudo if you're on Mac)
 
-Runn the app:
+Run the app:
 
     node server.js
 
-Then navigate to `http://localhost:3000` open up two _different_ browsers (*not* IE) and play!
+Then navigate to `http://localhost:3000`
 
 ##Signing up, and deploying to Nodejitsu
 
