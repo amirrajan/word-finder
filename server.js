@@ -1,7 +1,7 @@
 var express = require('express');
 var _ = require('underscore');
 var app = express();
-var server = require('http').createServer(app);
+//var server = require('http').createServer(app);
 var parseCookie = require('./lib/cookie_parser');
 var config = require('./lib/config');
 var words = require('./lib/words');
@@ -26,4 +26,6 @@ app.post('/search', function (req, res) {
   res.render('result', { words: result, pattern: req.body.pattern });
 });
 
-server.listen(process.env.PORT || config.port);
+//server.listen(process.env.PORT || config.port);
+app.listen(process.env.PORT || config.port);
+console.log("Listening on port: " + (process.env.PORT || config.port));
