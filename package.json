@@ -14,9 +14,7 @@
     "express": "~3.0.1",
     "ejs": "~0.8.3",
     "jasmine-node": "~1.0.26",
-    "underscore": "~1.4.2",
-    "socket.io": "~0.9.11",
-    "backbone": "~0.9.2"
+    "underscore": "~1.4.2"
   },
   "subdomain": "word-finder",
   "engines": {
