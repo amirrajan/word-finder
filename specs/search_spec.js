@@ -1,8 +1,5 @@
-//# spec - words.search
-
 var words = require('../lib/words');
 var	_ = require('underscore');
-
 
 describe('matching underscore', function(){
 	it('matches _h', function(){

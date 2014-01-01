@@ -65,7 +65,7 @@ To run tests, type:
 
 If you want tests to execute every time you change a file:
 
-    jasmine-node --autotest
+    jasmine-node . --autotest --watch .
 
 Run the app:
 
