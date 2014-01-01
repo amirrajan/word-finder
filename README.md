@@ -59,6 +59,14 @@ Install all the dependencies:
 
     npm install (you may need to prefix this with sudo if you're on Mac)
 
+To run tests, type:
+
+    jasmine-node .
+
+If you want tests to execute every time you change a file:
+
+    jasmine-node --autotest
+
 Run the app:
 
     node server.js
