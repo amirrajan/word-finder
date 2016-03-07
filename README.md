@@ -100,10 +100,6 @@ Git deploy your app:
 
     git push heroku master
 
-Assign a dyno to your app:
-
-    heroku ps:scale web=1
-
 Open the app (same as opening it in the browser):
 
     heroku open
