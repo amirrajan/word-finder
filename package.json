@@ -11,10 +11,11 @@
     "url": "git://github.com/amirrajan/word-finder.git"
   },
   "dependencies": {
-    "express": "~3.0.1",
-    "ejs": "~0.8.3",
-    "jasmine-node": "~1.0.26",
-    "underscore": "~1.4.2"
+    "body-parser": "^1.15.0",
+    "ejs": "~1.0.0",
+    "express": "~4.13.4",
+    "jasmine-node": "~1.11",
+    "underscore": "~1.8.3"
   },
   "subdomain": "word-finder",
   "engines": {
