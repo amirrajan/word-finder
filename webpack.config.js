@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var fs = require('fs');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var nodeModules = {};
 fs.readdirSync('node_modules')
@@ -17,6 +18,16 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'backend.js'
+  },
+  module: {
+    loaders: [
+      {
+        loader: 'babel-loader',
+        ignore: /(vendor\.js)/,
+        test: /\.js$/,
+        query: { presets: 'es2015' },
+      }
+    ]
   },
   externals: nodeModules
 };
