@@ -1,8 +1,10 @@
-require('babel-core/register');
 var express = require('express');
 var bodyParser = require('body-parser');
 var _ = require('lodash');
 var app = express();
+var dictionary = JSON.parse(
+  require('fs').readFileSync('./lib/dictionary.json')
+).dictionary;
 
 var words = require('./lib/words');
 app.set('view engine', 'ejs');
@@ -17,7 +19,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/search', function (req, res) {
-  var result = words.search(req.body.pattern).result;
+  var result = words.search(req.body.pattern, dictionary).result;
   res.render('result', { words: result, pattern: req.body.pattern });
 });
 
