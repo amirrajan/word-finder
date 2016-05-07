@@ -2,7 +2,7 @@
 
 I took every english word (over 200k words) and built a little NodeJS app that will help you find words that contain specific characters.
 
-Additionally, here are instructions to deploy this app to Nodejitsu, Heroku, and Azure via Windows or Mac.
+Additionally, here are instructions to deploy this app to Heroku.
 
 ##How to Use
 
@@ -59,22 +59,25 @@ Install all the dependencies:
 
     npm install (you may need to prefix this with sudo if you're on Mac)
 
-Install `jasmine` and `jasmine-node` globally:
+Install `mocha`:
 
-    npm install jasmine -g
-    npm install jasmine-node -g
+    npm install mocha -g
 
 To run tests, type:
 
-    jasmine-node .
+    mocha --compilers js:babel-register
 
 If you want tests to execute every time you change a file:
 
-    jasmine-node . --autotest --watch .
+    brew install fswatch
+
+In another window run
+
+    fswatch test/search_spec.js | xargs -n1 -I{} mocha --compilers js:babel-register`
 
 Run the app:
 
-    node server.js
+    node start.js
 
 Then navigate to `http://localhost:3000`
 

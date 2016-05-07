@@ -20,7 +20,7 @@ describe('matching underscore', function(){
 
 	it('matches h_', function(){
 		var find = 'h_';
-    var		result = words.search(find, dictionary).result;
+    var	result = words.search(find, dictionary).result;
 
 		_.each(result, function(match){
 			assert.equal(match.length, 2);
