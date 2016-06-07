@@ -1,6 +1,7 @@
 ##Word Finder (MIT License)
 
-I took every english word (over 200k words) and built a little NodeJS app that will help you find words that contain specific characters.
+I took every english word (over 200k words) and built a little NodeJS
+app that will help you find words that contain specific characters.
 
 Additionally, here are instructions to deploy this app to Heroku.
 
@@ -19,7 +20,8 @@ And you'll get words such as:
 
 ###The question mark
 
-This character is great for games like What's the Phrase (a knock off of Wheel of Fortune)
+This character is great for games like What's the Phrase (a knock off
+of Wheel of Fortune)
 
 Type a word into the text box with the following pattern:
 
@@ -37,7 +39,8 @@ but you wont get words like
 
     start
 
-because the `t` would already be visible (in What's the Phrase), and you would have typed:
+because the `t` would already be visible (in What's the Phrase), and
+you would have typed:
 
     st??t
 
@@ -49,7 +52,8 @@ Then clone this repo:
 
     git clone https://github.com/amirrajan/word-finder.git
 
-And `cd` into the directory (all instructions below assume you are in the `word-finder` directory:
+And `cd` into the directory (all instructions below assume you are in
+the `word-finder` directory:
 
     cd word-finder
 
@@ -79,13 +83,22 @@ Run the app:
 
     node start.js
 
+Consider using the package `nodemon` if you'd like. It'll auto start your server
+every time you save.
+
+    npm install nodemon -g
+    nodemon start.js
+
 Then navigate to `http://localhost:3000`
 
 ##Signing up, and deploying to Heroku
 
 ###Documentation
 
-From heroku.com, click Documentation, then click the Getting Started button, then click Node.js from the list of options on the left...which will take you here: https://devcenter.heroku.com/articles/nodejs
+From heroku.com, click Documentation, then click the Getting Started
+button, then click Node.js from the list of options on the
+left...which will take you here:
+https://devcenter.heroku.com/articles/nodejs
 
 Install Heroku toolbelt from here: https://toolbelt.heroku.com/
 

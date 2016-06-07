@@ -1,30 +1,32 @@
-var words = require('../lib/words');
-var	_ = require('underscore');
-var assert = require('assert');
-var dictionary = JSON.parse(
-  require('fs').readFileSync('./lib/dictionary.json')
+import { search } from '../lib/words';
+import { each }	from 'underscore';
+import assert from 'assert';
+import fs from 'fs';
+
+const dictionary = JSON.parse(
+  fs.readFileSync('./lib/dictionary.json')
 ).dictionary;
 
-describe('matching underscore', function(){
-	it('matches _h', function(){
-		var find = '_h';
-		var result = words.search(find, dictionary).result;
+describe('matching underscore', () => {
+  it('matches _h', () => {
+    const find = '_h';
+    const result = search(find, dictionary).result;
 
-		assert.equal(result.length, 7);
+    assert.equal(result.length, 7);
 
-		_.each(result, function(match){
-			assert.equal(match.length, 2);
-			assert.equal(match.indexOf('H'), 1);
-		}, result);
-	});
+    each(result, (match) => {
+      assert.equal(match.length, 2);
+      assert.equal(match.indexOf('H'), 1);
+    }, result);
+  });
 
-	it('matches h_', function(){
-		var find = 'h_';
-    var	result = words.search(find, dictionary).result;
+  it('matches h_', () => {
+    const find = 'h_';
+    const result = search(find, dictionary).result;
 
-		_.each(result, function(match){
-			assert.equal(match.length, 2);
-			assert.equal(match.indexOf('H'), 0);
-		}, result);
-	});
+    each(result, (match) => {
+      assert.equal(match.length, 2);
+      assert.equal(match.indexOf('H'), 0);
+    }, result);
+  });
 });
