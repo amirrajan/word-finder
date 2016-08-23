@@ -4,7 +4,7 @@
   "description": "A website that will help you with 'Whats the Phrase' and 'Words With Friends'",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node start.js"
   },
   "repository": {
     "type": "git",
