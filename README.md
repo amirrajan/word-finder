@@ -1,13 +1,13 @@
-##Word Finder (MIT License)
+## Word Finder (MIT License)
 
 I took every english word (over 200k words) and built a little NodeJS
 app that will help you find words that contain specific characters.
 
 Additionally, here are instructions to deploy this app to Heroku.
 
-##How to Use
+## How to Use
 
-###The underscore
+### The underscore
 
 Type a word into the text box with the following pattern:
 
@@ -18,7 +18,7 @@ And you'll get words such as:
     hello
     helio
 
-###The question mark
+### The question mark
 
 This character is great for games like What's the Phrase (a knock off
 of Wheel of Fortune)
@@ -44,7 +44,7 @@ you would have typed:
 
     st??t
 
-##Instructions for running
+## Instructions for running
 
 Go to http://nodejs.org and install NodeJS
 
@@ -57,7 +57,7 @@ the `word-finder` directory:
 
     cd word-finder
 
-##Run Locally
+## Run Locally
 
 Install all the dependencies:
 
@@ -91,9 +91,9 @@ every time you save.
 
 Then navigate to `http://localhost:3000`
 
-##Signing up, and deploying to Heroku
+## Signing up, and deploying to Heroku
 
-###Documentation
+### Documentation
 
 From heroku.com, click Documentation, then click the Getting Started
 button, then click Node.js from the list of options on the
