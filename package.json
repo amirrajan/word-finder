@@ -2,7 +2,7 @@
   "name": "word-finder",
   "version": "0.0.4-28",
   "description": "A website that will help you with 'Whats the Phrase' and 'Words With Friends'",
-  "main": "server.js",
+  "main": "start.js",
   "scripts": {
     "start": "node start.js"
   },
@@ -23,8 +23,5 @@
   "subdomain": "word-finder",
   "engines": {
     "node": "10.4.x"
-  },
-  "devDependencies": {
-    "babel-core": "^6.7.7"
   }
 }
