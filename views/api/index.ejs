@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Word Finder</title>
+        <meta name="version" content="1.0">
+        <link rel="stylesheet" href="/public/api.css" />
+    </head>
+    <body>
+        <h1>Word Finder</h1>
+
+        <p>
+           I took every english word (over 200k words) and built a little app
+           that will help you find words that contain specific characters.
+        </p>
+        <p>
+            Enter a word, use _ and ? as needed for unknown characters. Using _ means to include letters that aren't already used (you can think of it as a "Wheel of Fortune" placeholder). Using ? will find words that contain any character (whether it's currently "revealed" or not).
+        </p>
+        <form id="perform-search" name="perform-search" method="get" action="/api/search">
+            <label for="search-text">Search text:</label>
+            <input id="search-text" name="search-text" type="text" value="<%= pattern %>" />
+            <input type="submit" />
+        </form>
+
+        <% if(words.length != 0) { %>
+            <p id="search-result-count" data-count="<%= words.length %>">Words found: <%= words.length %></p>
+        <ul id="search-result" name="search-results">
+            <% for(var i = 0; i < words.length; i++) { %>
+                <li><a id="<%= words[i] %>" rel="external help" href="https://www.google.com/search?q=define <%= words[i] %>" target="_blank"><%= words[i] %></a></li>
+            <% } %>
+            </ul>
+        <% } %>
+
+
+        <% if(pattern && pattern.length != 0) { %>
+            <p>Permalink:</p>
+            <a rel="bookmark" href="<%= permalink %>"> <%= pattern %> </a>
+        <% } %>
+    </body>
+</html>

@@ -22,7 +22,7 @@
   },
   "subdomain": "word-finder",
   "engines": {
-    "node": ">=0.8.x"
+    "node": "10.4.x"
   },
   "devDependencies": {
     "babel-core": "^6.7.7"

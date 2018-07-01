@@ -17,7 +17,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.render('index', { pattern: null });
+  res.render('api/index', { pattern: '', words: [] });
+});
+
+app.get('/api', (req, res) => {
+  res.render('api/index', { pattern: '', words: [] });
+});
+
+app.get('/api/search', (req, res) => {
+  console.log(req.queryString);
+  res.render('api/index', {
+    pattern: req.query['search-text'],
+    words: search(req.query['search-text'], dictionary).result,
+    permalink: req.protocol + '://' + req.get('host') + req.originalUrl
+  });
 });
 
 app.post('/search', function (req, res) {
