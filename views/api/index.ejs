@@ -1,11 +1,11 @@
 <html>
     <head>
-        <title>Word Finder API</title>
+        <title>Word Finder REST API</title>
         <meta name="version" content="1.0">
         <link rel="stylesheet" href="/public/api.css" />
     </head>
     <body>
-        <h1>Word Finder API</h1>
+        <h1>Word Finder REST API</h1>
 
         <form id="perform-search" name="perform-search" method="get" action="/api/search">
             <label for="search-text">Search text:</label>
@@ -22,10 +22,10 @@
             </ul>
         <% } %>
 
-        <h2>API Usage Instructions</h2>
+        <h2>REST API Usage Instructions</h2>
 
         <p>
-           I took every english word (over 200k words) and built a little API
+           I took every english word (over 200k words) and built a little REST API
            that will help you find words that contain specific characters.
         </p>
 
@@ -63,7 +63,7 @@
 
         <aside>
             <p>
-                Here is an example of how to interact with this API using Ruby:
+                Here is an example of how to interact with this REST API using Ruby:
             </p>
             <pre>
 require 'net/http'
