@@ -22,6 +22,11 @@
             </ul>
         <% } %>
 
+        <% if(pattern && pattern.length != 0) { %>
+            <p>Permalink:</p>
+            <a rel="bookmark" href="<%= permalink %>"> <%= pattern %> </a>
+        <% } %>
+
         <h2>REST API Usage Instructions</h2>
 
         <p>
@@ -56,10 +61,6 @@
                 <li>GOODWIFE</li>
             </ul>
         </p>
-        <% if(pattern && pattern.length != 0) { %>
-            <p>Permalink:</p>
-            <a rel="bookmark" href="<%= permalink %>"> <%= pattern %> </a>
-        <% } %>
 
         <aside>
             <p>
