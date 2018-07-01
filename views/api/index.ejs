@@ -1,19 +1,12 @@
 <html>
     <head>
-        <title>Word Finder</title>
+        <title>Word Finder API</title>
         <meta name="version" content="1.0">
         <link rel="stylesheet" href="/public/api.css" />
     </head>
     <body>
-        <h1>Word Finder</h1>
+        <h1>Word Finder API</h1>
 
-        <p>
-           I took every english word (over 200k words) and built a little app
-           that will help you find words that contain specific characters.
-        </p>
-        <p>
-            Enter a word, use _ and ? as needed for unknown characters. Using _ means to include letters that aren't already used (you can think of it as a "Wheel of Fortune" placeholder). Using ? will find words that contain any character (whether it's currently "revealed" or not).
-        </p>
         <form id="perform-search" name="perform-search" method="get" action="/api/search">
             <label for="search-text">Search text:</label>
             <input id="search-text" name="search-text" type="text" value="<%= pattern %>" />
@@ -29,7 +22,40 @@
             </ul>
         <% } %>
 
+        <h2>API Usage Instructions</h2>
 
+        <p>
+           I took every english word (over 200k words) and built a little API
+           that will help you find words that contain specific characters.
+        </p>
+
+        <p>
+            Enter a word using _ and ? as needed for unknown characters. Using ? means to include letters that aren't already used (you can think of it as a "Wheel of Fortune" placeholder). Using _ will find words that contain any character (whether it's currently "revealed" or not).
+            <br />
+            <br />
+            For example, go?????e would return:
+            <ul>
+                <li>GOADLIKE</li>
+                <li>GOATLIKE</li>
+                <li>GOBSHITE</li>
+                <li>GOLDSIZE</li>
+            </ul>
+            <br />
+            And go_____e would return:
+            <ul>
+                <li>GOADLIKE</li>
+                <li>GOATLIKE</li>
+                <li>GOBSHITE</li>
+                <li>GOETHITE</li>
+                <li>GOLDSIZE</li>
+                <li>GONGLIKE</li>
+                <li>GONOCYTE</li>
+                <li>GONOPORE</li>
+                <li>GOODSIRE</li>
+                <li>GOODTIME</li>
+                <li>GOODWIFE</li>
+            </ul>
+        </p>
         <% if(pattern && pattern.length != 0) { %>
             <p>Permalink:</p>
             <a rel="bookmark" href="<%= permalink %>"> <%= pattern %> </a>
@@ -37,7 +63,7 @@
 
         <aside>
             <p>
-                By the way. You can also interact with this website programatically. Here is an example of how to do that using Ruby:
+                Here is an example of how to interact with this API using Ruby:
             </p>
             <pre>
 require 'net/http'
@@ -58,7 +84,6 @@ puts response.css("#search-result li a").map { |n| n['id'] }
 puts "Permalink:"
 puts response.css('a[rel="bookmark"]').map { |n| n['href'] }
             </pre>
-
         </aside>
     </body>
 </html>
