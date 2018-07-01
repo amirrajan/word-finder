@@ -21,7 +21,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api', (req, res) => {
-  res.render('api/index', { pattern: '', words: [] });
+  res.render('api/index', {
+    pattern: '',
+    words: [],
+    req: req
+  });
 });
 
 app.get('/api/search', (req, res) => {
@@ -29,7 +33,8 @@ app.get('/api/search', (req, res) => {
   res.render('api/index', {
     pattern: req.query['search-text'],
     words: search(req.query['search-text'], dictionary).result,
-    permalink: req.protocol + '://' + req.get('host') + req.originalUrl
+    permalink: req.protocol + '://' + req.get('host') + req.originalUrl,
+    req: req
   });
 });
 

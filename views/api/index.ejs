@@ -34,5 +34,31 @@
             <p>Permalink:</p>
             <a rel="bookmark" href="<%= permalink %>"> <%= pattern %> </a>
         <% } %>
+
+        <aside>
+            <p>
+                By the way. You can also interact with this website programatically. Here is an example of how to do that using Ruby:
+            </p>
+            <pre>
+require 'net/http'
+require 'nokogiri'
+host = '<%= req.get('host') %>'
+root = Nokogiri::HTML(Net::HTTP.get(host, '/'))
+response = Nokogiri::HTML(
+  Net::HTTP::get(
+    host,
+    root.css('form[id="perform-search"]')
+        .first['action']
+        .concat("?")
+        .concat('search-text=he__o')))
+
+puts "Results:"
+puts response.css("#search-result li a").map { |n| n['id'] }
+
+puts "Permalink:"
+puts response.css('a[rel="bookmark"]').map { |n| n['href'] }
+            </pre>
+
+        </aside>
     </body>
 </html>
