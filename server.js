@@ -17,7 +17,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.render('api/index', { pattern: '', words: [] });
+  res.render('api/index', {
+    pattern: '',
+    words: [],
+    req: req
+  });
 });
 
 app.get('/api', (req, res) => {
